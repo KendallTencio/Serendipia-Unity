@@ -11,6 +11,7 @@ public class Synopsis : MonoBehaviour
     public Image images_holder;
     public Text text_display;
     public GameObject canvas;
+    public GameObject BackButton;
 
     private int count_sentences;
     private int count_limit;
