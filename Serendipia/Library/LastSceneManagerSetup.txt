@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Sinopsis.unity
+=======
+- path: Assets/Scenes/Mapa.unity
+>>>>>>> main
   isLoaded: 1
   isActive: 1
   isSubScene: 0

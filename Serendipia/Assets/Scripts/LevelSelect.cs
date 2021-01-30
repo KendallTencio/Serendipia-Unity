@@ -30,7 +30,13 @@ public class LevelSelect : MonoBehaviour
     {
         if (unlocked)
         {
-            SceneManager.LoadScene(nombreEscena);
+            StartCoroutine(rutinaCambio(nombreEscena));
+            //SceneManager.LoadScene(nombreEscena);
         }
+    }
+    IEnumerator rutinaCambio(string nombreEscena)
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(nombreEscena);
     }
 }
