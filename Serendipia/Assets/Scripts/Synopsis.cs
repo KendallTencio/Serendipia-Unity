@@ -2,41 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Synopsis : MonoBehaviour
 {
     public string[] text_sentences;
-    public GameObject[] images;
-    public GameObject images_holder;
+    public Sprite[] images;
+    public Image images_holder;
     public Text text_display;
-
     public GameObject canvas;
-    public Text chapter_text;
+
+    private int count_sentences;
+    private int count_limit;
 
     void Start()
     {
-        canvas.SetActive(false);
+        count_sentences = 0;
+        count_limit = text_sentences.Length;
+        StartCoroutine(FadeImage());
     }
 
     IEnumerator FadeImage()
     {
+        text_display.text = text_sentences[count_sentences];
+        images_holder.sprite = images[count_sentences];
         for (float i = 0; i <= 1; i += Time.deltaTime)
         {
-            chapter_text.color = new Color(1, 1, 1, i);
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(1.5f);
-        for (float i = 1; i >= 0; i -= Time.deltaTime)
-        {
-            chapter_text.color = new Color(1, 1, 1, i);
+            text_display.color = new Color(1, 1, 1, i);
+            images_holder.color = new Color(1, 1, 1, i);
             yield return null;
         }
     }
 
-    void NextSentence()
+    public void NextSentence()
     {
-        canvas.SetActive(true);
-        StartCoroutine(FadeImage());
+        if (count_sentences != (count_limit - 1))
+        {
+            count_sentences++;
+            StartCoroutine(FadeImage());
+        }
+        else
+        {
+            SceneManager.LoadScene("MenuPrincipal");
+        }
+    }
+
+    public void BackSentence()
+    {
+        if (count_sentences != 0)
+        {
+            count_sentences--;
+            StartCoroutine(FadeImage());
+        }
     }
 }
