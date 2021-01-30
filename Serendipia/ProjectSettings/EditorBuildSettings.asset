@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Mapa.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Tienda.unity
+    guid: 22691c32395c2bd41b059e9fc0ddfb62
+  - enabled: 1
+    path: Assets/Scenes/Patio.unity
+    guid: fc6b6294fb68e5042ba6889405c2a1ec
+  - enabled: 1
+    path: Assets/Scenes/Carretera.unity
+    guid: eced8190eb3414b46bad3c2961465f85
+  - enabled: 1
+    path: Assets/Scenes/Casa.unity
+    guid: 37198997a1c33b641bff774f54a809f0
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 3bf214cd5c1a3944f9da2a998e68c3da
   m_configObjects: {}
